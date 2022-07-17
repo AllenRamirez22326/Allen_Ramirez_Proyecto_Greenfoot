@@ -35,4 +35,7 @@ public class HealthBar extends Actor
     public void loseHealth(){
         health--;
     }
+    public void bossHit(){
+        health=health-5;
+    }
 }

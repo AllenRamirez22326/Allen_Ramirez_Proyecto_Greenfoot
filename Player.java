@@ -28,6 +28,8 @@ public class Player extends Actor
     public int positionFire=0;
     public boolean cool=false;
     public boolean dashS=true;
+    private boolean recoilSwitch=true;
+    private boolean manaSwitch=true;
     public Player(){
         
         setImage(gifImage.getCurrentImage());
@@ -39,6 +41,7 @@ public class Player extends Actor
     {
         pngImageU.scale(100,100);
         pngImageD.scale(100,100);
+        
         if (horizontal==0){
             setImage(gifImage.getCurrentImage());
         }
@@ -57,6 +60,8 @@ public class Player extends Actor
         getImage().scale(80,80);
         movePlayer();
         dash();
+        rechargeMana();
+        recoilBoss();
         if(time<5){
             time++;
         }else if(time==5){
@@ -126,9 +131,7 @@ public class Player extends Actor
         }
         }
     }
-    public void shootFire(){
-        
-    }
+    
     public boolean getCounter(){
         return counter;
     }
@@ -139,24 +142,53 @@ public class Player extends Actor
         return positionFire;
     }
     public void dash(){
-        if (Greenfoot.isKeyDown("o") && dashS==true && horizontal==1){
+        Mana mana= getWorld().getObjects(Mana.class).get(0);
+        
+        if (Greenfoot.isKeyDown("o") && dashS==true && horizontal==1 && mana.getMana()>0){
             setLocation(getX()+70,getY());
+            mana.loseMana();
             dashS=false;
+            
         }
-        if (Greenfoot.isKeyDown("o") && dashS==true && horizontal==2){
+        if (Greenfoot.isKeyDown("o") && dashS==true && horizontal==2 && mana.getMana()>0){
             setLocation(getX()-70,getY());
+            mana.loseMana();
             dashS=false;
         }
-        if (Greenfoot.isKeyDown("o") && dashS==true && horizontal==3){
+        if (Greenfoot.isKeyDown("o") && dashS==true && horizontal==3 && mana.getMana()>0){
             setLocation(getX(),getY()-70);
+            mana.loseMana();
             dashS=false;
         }
-        if (Greenfoot.isKeyDown("o") && dashS==true && horizontal==4){
+        if (Greenfoot.isKeyDown("o") && dashS==true && horizontal==4 && mana.getMana()>0){
             setLocation(getX(),getY()+70);
+            mana.loseMana();
             dashS=false;
         }
         else if (!Greenfoot.isKeyDown("o" ) && dashS==false){
             dashS=true;
+        }
+    }
+    public void recoilBoss(){
+        World world= getWorld();
+        RPG rPg= (RPG)world;
+        Round round = rPg.getRound();
+        if (round.getRound()==2 && getX()!=799 && recoilSwitch==true){
+            setLocation(getX()+100,getY());
+            
+        }
+        if(getX()==999){
+            recoilSwitch=false;
+        }
+    }
+    public void rechargeMana(){
+        Mana mana= getWorld().getObjects(Mana.class).get(0);
+        if (Greenfoot.isKeyDown("i") && mana.getMana()<50 && manaSwitch==true ){
+            mana.addMana();
+            manaSwitch=false;
+        }
+        else if (!Greenfoot.isKeyDown("i" ) && manaSwitch==false){
+            manaSwitch=true;
         }
     }
 }

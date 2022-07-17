@@ -24,4 +24,10 @@ public class Score extends Actor
     public void addScore(){
         score++;
     }
+    public int getScore(){
+        return score;
+    }
+    public void killBoss(){
+        score=score+10;
+    }
 }

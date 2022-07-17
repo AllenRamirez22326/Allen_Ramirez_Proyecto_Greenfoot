@@ -19,6 +19,7 @@ public class Enemy2 extends Enemy
     private int life=0;
     private int death=1;
     private int backTimer=0;
+    public int speed=7;
     public void act()
     {
         Actor player = (Actor)getWorld().getObjects(Player.class).get(0);
@@ -55,7 +56,7 @@ public class Enemy2 extends Enemy
     }
     public void moveEnemy1(){
         //setLocation(getX(),getY()+4);
-        move(9);
+        move(speed);
     }
     public void touchPlayer(){
         
@@ -67,5 +68,11 @@ public class Enemy2 extends Enemy
             healthbar.loseHealth();
             
         } 
+    }
+    public int getSpeed(){
+        return speed;
+    }
+    public void addSpeed(){
+        speed=19;
     }
 }
