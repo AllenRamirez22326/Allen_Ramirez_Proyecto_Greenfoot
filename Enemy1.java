@@ -54,7 +54,7 @@ public class Enemy1 extends Enemy
     }
     public void moveEnemy1(){
         //setLocation(getX(),getY()+4);
-        move(2);
+        move(1);
     }
     public void touchPlayer(){
         

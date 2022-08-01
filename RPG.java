@@ -21,7 +21,9 @@ public class RPG extends World
     int enemy2appearence=150;
     public int multiplierround=1;
     boolean bossapp=true;
-    public int kinground=2;
+    public int kinground=5;
+    public int enemy3App=400;
+    
     public RPG()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -34,14 +36,11 @@ public class RPG extends World
     }
     public void act(){
         
-        
         addEnemy1();
-        
         addEnemy2();
-        
+        addEnemy3();
         addKingghas();
         addRound();
-        
     }
     
     public HealthBar getHealthBar(){
@@ -66,7 +65,7 @@ public class RPG extends World
      */
     public void addEnemy1(){
         
-        if (Greenfoot.getRandomNumber(87)<1 && round.getRound()!=kinground){
+        if (Greenfoot.getRandomNumber(80)<1 && round.getRound()!=kinground){
         addObject(new Enemy1(), Greenfoot.getRandomNumber(600),0);
     }
     }
@@ -76,6 +75,11 @@ public class RPG extends World
 
     }
     
+    }
+    public void addEnemy3(){
+        if(Greenfoot.getRandomNumber(enemy3App)<1 && round.getRound()>=kinground+1){
+            addObject(new Enemy3(), 0+999*Greenfoot.getRandomNumber(2),Greenfoot.getRandomNumber(600));
+        }
     }
     public void addKingghas(){
         Player player1= getObjects(Player.class).get(0);

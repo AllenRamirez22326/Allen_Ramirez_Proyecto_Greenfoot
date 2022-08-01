@@ -19,7 +19,7 @@ public class Enemy2 extends Enemy
     private int life=0;
     private int death=1;
     private int backTimer=0;
-    public int speed=7;
+    public int speed=6;
     public void act()
     {
         Actor player = (Actor)getWorld().getObjects(Player.class).get(0);

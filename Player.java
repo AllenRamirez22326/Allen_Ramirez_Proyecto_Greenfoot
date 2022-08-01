@@ -30,6 +30,7 @@ public class Player extends Actor
     public boolean dashS=true;
     private boolean recoilSwitch=true;
     private boolean manaSwitch=true;
+    private int kinground=5;
     public Player(){
         
         setImage(gifImage.getCurrentImage());
@@ -64,7 +65,7 @@ public class Player extends Actor
         recoilBoss();
         if(time<5){
             time++;
-        }else if(time==5){
+        }else if(time>=5){
             sword();
             time=0;
         }
@@ -173,7 +174,7 @@ public class Player extends Actor
         World world= getWorld();
         RPG rPg= (RPG)world;
         Round round = rPg.getRound();
-        if (round.getRound()==2 && getX()!=799 && recoilSwitch==true){
+        if (round.getRound()==kinground && getX()!=799 && recoilSwitch==true){
             setLocation(getX()+100,getY());
             
         }
@@ -183,7 +184,7 @@ public class Player extends Actor
     }
     public void rechargeMana(){
         Mana mana= getWorld().getObjects(Mana.class).get(0);
-        if (Greenfoot.isKeyDown("i") && mana.getMana()<50 && manaSwitch==true ){
+        if (Greenfoot.isKeyDown("i") && mana.getMana()<50 && manaSwitch==true && !Greenfoot.isKeyDown("o" ) ){
             mana.addMana();
             manaSwitch=false;
         }

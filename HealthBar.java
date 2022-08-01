@@ -22,6 +22,7 @@ public class HealthBar extends Actor
     public void act()
     {
         update();
+        endGame();
     }
     public void update(){
         setImage(new GreenfootImage(healthBarW+2,healthBarH+2));
@@ -33,9 +34,16 @@ public class HealthBar extends Actor
         
     }
     public void loseHealth(){
-        health--;
+        health=health-3;
     }
     public void bossHit(){
         health=health-5;
+    }
+    public void endGame(){
+        Player player =getWorld().getObjects(Player.class).get(0);
+        if (health<=0){
+            getWorld().removeObject(player);
+                   
+        }
     }
 }
