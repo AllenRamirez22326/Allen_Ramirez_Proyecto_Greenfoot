@@ -31,6 +31,7 @@ public class Player extends Actor
     private boolean recoilSwitch=true;
     private boolean manaSwitch=true;
     private int kinground=5;
+    private boolean death=false;
     public Player(){
         
         setImage(gifImage.getCurrentImage());
@@ -58,6 +59,7 @@ public class Player extends Actor
         else if(horizontal==4){
             setImage(gifImageD.getCurrentImage());
         }
+        if(death==false){
         getImage().scale(80,80);
         movePlayer();
         dash();
@@ -69,7 +71,7 @@ public class Player extends Actor
             sword();
             time=0;
         }
-       
+        }
 
         
     }
@@ -191,5 +193,8 @@ public class Player extends Actor
         else if (!Greenfoot.isKeyDown("i" ) && manaSwitch==false){
             manaSwitch=true;
         }
+    }
+    public void setDeath(boolean death){
+        this.death=death;
     }
 }

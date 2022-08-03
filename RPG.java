@@ -18,12 +18,13 @@ public class RPG extends World
     Score counter= new Score();
     Round round= new Round();
     Mana mana= new Mana();
+    Player2 player2= new Player2();
     int enemy2appearence=150;
     public int multiplierround=1;
     boolean bossapp=true;
     public int kinground=5;
     public int enemy3App=400;
-    
+    GreenfootSound backgroundMusic = new GreenfootSound("JUEGOGOG.mp3");
     public RPG()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -35,7 +36,7 @@ public class RPG extends World
         return counter;
     }
     public void act(){
-        
+        backgroundMusic.playLoop();
         addEnemy1();
         addEnemy2();
         addEnemy3();
@@ -109,6 +110,7 @@ public class RPG extends World
         addObject(counter,90,560);
         addObject(round, 90,510);
         addObject(mana, 60,50);
+        addObject(player2, 400, 215);
     }
     
 }

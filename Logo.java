@@ -13,6 +13,7 @@ public class Logo extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootImage image= new GreenfootImage("logo.png");
+    
     public Logo(){
         setImage(image);
         getImage().scale(500,400);
