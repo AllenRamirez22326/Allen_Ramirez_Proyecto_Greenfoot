@@ -14,6 +14,10 @@ public class Explosion1 extends Actor
      */
     GifImage gifImage = new GifImage("Explosion1.gif");
     private int timer=0;
+    public Explosion1(){
+        setImage(gifImage.getCurrentImage());
+        getImage().scale(70,70);
+    }
     public void act()
     {
        

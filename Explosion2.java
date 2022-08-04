@@ -10,6 +10,10 @@ public class Explosion2 extends Actor
 {
     GifImage gifImage = new GifImage("ExplosionPurple.gif");
     private int timer=0;
+    public Explosion2(){
+        setImage(gifImage.getCurrentImage());
+        getImage().scale(70,70);
+    }
     public void act()
     {
        

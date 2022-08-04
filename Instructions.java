@@ -12,7 +12,7 @@ public class Instructions extends Actor
      * Act - do whatever the Instructions wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    GreenfootImage img= new GreenfootImage("Player1: WASD|| Player2:8456 " , 30, Color.RED, new Color(0, 0, 0, 0));
+    GreenfootImage img= new GreenfootImage("Player1: WASD O I || Player2:8456 " , 30, Color.RED, new Color(0, 0, 0, 0));
     public void act()
     {
         setImage(img);

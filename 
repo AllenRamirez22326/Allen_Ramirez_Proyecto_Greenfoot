@@ -1,0 +1,23 @@
+[33mcommit 175d4593e8c2536865922eff359e48e28f570600[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: AllenRamirez22326 <ram22326@uvg.edu.gt>
+Date:   Wed Aug 3 00:11:29 2022 -0600
+
+    Version final del juego. Se agrega musica, menu y 2do player
+
+[33mcommit 9badd3d04969052636ee4f9f88bf2a0a1675afa0[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: AllenRamirez22326 <ram22326@uvg.edu.gt>
+Date:   Sun Jul 31 23:51:11 2022 -0600
+
+    V3 Menu funcional
+
+[33mcommit 9fe4a73489d52a72397268d79c757b857d57c182[m
+Author: AllenRamirez22326 <ram22326@uvg.edu.gt>
+Date:   Sun Jul 17 02:18:32 2022 -0600
+
+    v2 Se agrega la barra de mana, el primer jefe y rounds funcionales
+
+[33mcommit f585d0579572b2808599a1ef96e9f3d107e62281[m
+Author: AllenRamirez22326 <ram22326@uvg.edu.gt>
+Date:   Sat Jul 16 10:43:58 2022 -0600
+
+    V1 Version inicial  del juego. Incluye movimiento del jugador, healthbar, score y enemigos

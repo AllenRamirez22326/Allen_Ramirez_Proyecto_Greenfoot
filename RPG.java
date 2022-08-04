@@ -66,7 +66,7 @@ public class RPG extends World
      */
     public void addEnemy1(){
         
-        if (Greenfoot.getRandomNumber(80)<1 && round.getRound()!=kinground){
+        if (Greenfoot.getRandomNumber(100)<1 && round.getRound()!=kinground){
         addObject(new Enemy1(), Greenfoot.getRandomNumber(600),0);
     }
     }
